@@ -26,7 +26,7 @@
 <section id="hero" class="hero">
   <div class="container h-100 d-flex align-items-center justify-content-end">
       <div class="text-box text-start" style="width: 30%;">
-          <h2 class="display-4 mb-4" style="font-weight: 900;" data-aos="fade-left" data-aos-delay="300">We care for
+          <h2 class="display-4 mb-4" style="font-weight: 680;" data-aos="fade-left" data-aos-delay="300">We care for
               your furry little loved ones while
               you're away</h2>
           <a href="#visit" class="btn btn-light rounded-pill px-5 py-2 mt-5" data-aos="flip-down">Schedule a Visit</a>
@@ -41,7 +41,7 @@
       <div class="row align-items-center">
           <!-- Text Column -->
           <div class="col-lg-5 col-12 mb-4 mb-lg-0">
-              <h1 class="display-4 text-start fw-bold mb-5" data-aos="fade-right">
+              <h1 class="display-4 text-start fw-bold mb-5" style="font-weight: 500;" data-aos="fade-right">
                   Expert care for your furry, feathery, or scaley friend
               </h1>
               <p class="text-start lead mb-5" data-aos="fade-right">
@@ -100,9 +100,11 @@
               style="min-height: 100vh;">
               <div style="max-width: 400px; width: 100%;">
                   <div class="d-flex align-items-center mb-4">
-                      <img src="images/paw-logo.png" alt="Logo" class="img-fluid rounded-circle"
-                          style="height: 70px; width: 70px;">
+                      <a class="navbar-brand d-flex align-items-center" href="#">
+                        <img src="images/paw-logo.png" alt="Logo" class="img-fluid rounded-circle"
+                        style="height: 70px; width: 70px;">
                       <span class="ms-3 fs-5 fw-bold text-uppercase">Pawtastic</span>
+                      </a>
                   </div>
 
                   <p class="fw-bold mb-3 mt-5" style="font-size: 2.5rem;">All services include:</p>
@@ -119,7 +121,6 @@
           <!-- Schedule a visit right side form -->
           <div class="col-12 col-md-7 d-flex justify-content-center align-items-center"
               style="min-height: 110vh; background-color: #FAF0E6">
-
               <form style="width: 100%; max-width: 700px;" action="{{ route('appointments.store') }}" method="POST">
                   @csrf
                   <h2 class="display-4 mb-4 text-start fw-bold" data-aos="fade-down-right">We'll take your dog for a
@@ -162,7 +163,7 @@
                       <div class="btn-group d-flex flex-wrap w-100" role="group"
                           aria-label="Segmented checkbox-style selector">
                           <input type="checkbox" class="btn-check" id="monday" name="days[]" value="Mon"
-                              autocomplete="off" required>
+                              autocomplete="off">
                           <label class="btn btn-outline-secondary" for="monday">Mon</label>
 
                           <input type="checkbox" class="btn-check" id="tuesday" name="days[]" value="Tue"
@@ -189,7 +190,7 @@
                               autocomplete="off">
                           <label class="btn btn-outline-secondary" for="sunday">Sun</label>
                       </div>
-                      @if ($errors->has('days.*'))
+                      @if ($errors->has('days.*') or $errors->has('days'))
                           <div class="text-danger small mt-2">Please select at least one valid day.</div>
                       @endif
                   </div>
@@ -202,7 +203,7 @@
                       <div class="btn-group d-flex flex-wrap w-100" role="group"
                           aria-label="Segmented checkbox-style selector">
                           <input type="checkbox" class="btn-check" id="morning" name="times[]" value="Morning"
-                              autocomplete="off" required>
+                              autocomplete="off">
                           <label class="btn btn-outline-secondary" for="morning">Morning</label>
 
                           <input type="checkbox" class="btn-check" id="afternoon" name="times[]" value="Afternoon"
@@ -213,7 +214,7 @@
                               autocomplete="off">
                           <label class="btn btn-outline-secondary" for="evening">Evening</label>
                       </div>
-                      @if ($errors->has('times.*'))
+                      @if ($errors->has('times.*') or $errors->has('times'))
                           <div class="text-danger small mt-2">Please select at least one valid time.</div>
                       @endif
                   </div>
