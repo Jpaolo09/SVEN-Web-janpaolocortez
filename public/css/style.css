@@ -1,0 +1,112 @@
+
+body {
+    scroll-behavior: smooth;
+    margin: 0;
+    padding: 0;
+    font-family: 'Open Sans', sans-serif;
+}
+
+section {
+    min-height: 110vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.navbar {
+    z-index: 10;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: transparent;
+}
+
+.navbar .navbar-brand,
+.navbar .nav-link {
+    color: white !important;
+}
+
+.navbar-brand img {
+    height: 40px;
+    width: 40px;
+    margin-right: 10px;
+    border-radius: 8px;
+}
+
+.hero {
+    background: url('../images/dog-bg.jpg') center/cover no-repeat;
+    color: white;
+    margin-top: -72px;
+    padding-top: 120px;
+    position: relative;
+    z-index: 1;
+}
+
+.hero-credit {
+    position: absolute;
+    bottom: 15%;
+    left: 10%;
+    font-size: 0.9rem;
+    color: white;
+    opacity: 0.8;
+}
+
+.about-us {
+    background-color: #FAF9F6;
+}
+
+.schedule-visit {
+    background-color: #e9ecef;
+}
+
+@media (max-width: 768px) {
+    .hero .text-box {
+        width: 100% !important;
+        text-align: center;
+    }
+
+    .hero .text-box h2 {
+        font-size: 2rem;
+    }
+
+    .hero {
+        padding-top: 140px;
+    }
+}
+
+.square-img-wrapper {
+    position: relative;
+    width: 100%;
+    padding-top: 100%;
+    /* 1:1 Aspect Ratio */
+    overflow: hidden;
+}
+
+.square-img-wrapper img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+/* Text Overlay */
+.overlay-text {
+    position: absolute;
+    bottom: 10%;
+    left: 8%;
+    color: white;
+    font-weight: 700;
+    font-size: 1rem;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
+}
+
+.visit-services {
+    background: url('../images/dog-dark-bg.jpg') center center / cover no-repeat;
+}
+
+.btn-group .btn {
+    border-radius: 0 !important;
+}
