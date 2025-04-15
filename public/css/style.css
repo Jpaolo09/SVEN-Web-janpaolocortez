@@ -110,3 +110,7 @@ section {
 .btn-group .btn {
     border-radius: 0 !important;
 }
+
+textarea {
+    resize: none;
+}
